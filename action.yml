@@ -7,7 +7,6 @@ inputs:
   output-pdf:
     description: 'The name of the rendered PDF file'
     required: true
-outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
