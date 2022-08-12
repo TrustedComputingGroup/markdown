@@ -37,8 +37,10 @@ RUN tlmgr update --self && \
     transparent
 
 RUN apt-get update && apt-get install -y \
+    chromium-browser \
     software-properties-common \
+    nodejs \
     npm
     
     
-RUN npm install --global imgur mermaid.cli mermaid-filter
+RUN npm install --global puppeteer imgur mermaid.cli mermaid-filter
