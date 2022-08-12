@@ -37,7 +37,7 @@ RUN tlmgr update --self && \
     transparent
 
 RUN apt-get update && apt-get install -y \
-    chromium \
+    chromium-browser \
     software-properties-common \
     nodejs \
     npm
