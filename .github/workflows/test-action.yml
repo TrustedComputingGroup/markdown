@@ -1,0 +1,33 @@
+name: action validation
+
+on:
+  pull_request:
+
+jobs:
+  build-validation:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run the action
+        uses: .
+        with:
+          input-md: sample/sample1.md
+          output-pdf: sample1.pdf
+
+      - name: Run the action
+        uses: .
+        with:
+          input-md: sample/sample2.md
+          output-pdf: sample2.pdf
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: samples
+          path: sample*.pdf
