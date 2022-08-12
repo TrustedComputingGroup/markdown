@@ -37,7 +37,12 @@ RUN tlmgr update --self && \
     transparent
 
 RUN apt-get update && apt-get install -y \
+    chromium \
     software-properties-common \
     nodejs \
     npm
+    
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
+    PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+
 RUN npm install --global mermaid-filter --unsafe-perm
