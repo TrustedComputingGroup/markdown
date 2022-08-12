@@ -38,5 +38,6 @@ RUN tlmgr update --self && \
 
 RUN apt-get update && apt-get install -y \
     software-properties-common \
+    nodejs \
     npm
-RUN npm install --global mermaid-filter
+RUN npm install --global mermaid-filter --unsafe-perm
