@@ -1,4 +1,4 @@
-FROM pandoc/latex:2.19
+FROM pandoc/latex:2.19-ubuntu
 
 COPY ./img/* /resources/img/
 COPY ./template/* /resources/templates/
