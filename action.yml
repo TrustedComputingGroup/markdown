@@ -12,6 +12,7 @@ runs:
   image: 'Dockerfile'
   args:
     - '--template=eisvogel.latex'
+    - '--filter=mermaid-filter'
     - '--resource-path=/resources'
     - '--data-dir=/resources'
     - '--toc'
