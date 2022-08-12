@@ -74,6 +74,10 @@ Host->>TPM: TPM2_Quote
 TPM->>Host: <quoted PCRs>
 ```
 
+### A Computer
+
+![Computer](sample2-img/computer.jpg)
+
 ## Tables
 
 ### Mandatory Algorithms
