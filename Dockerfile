@@ -36,4 +36,7 @@ RUN tlmgr update --self && \
     anyfontsize \
     transparent
 
+RUN apt-get update && apt-get install -y \
+    software-properties-common \
+    npm
 RUN npm install --global mermaid-filter
