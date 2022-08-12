@@ -41,4 +41,4 @@ RUN apt-get update && apt-get install -y \
     npm
     
     
-RUN npm install --global mmdc imgur mermaid-filter
+RUN npm install --global imgur mermaid.cli mermaid-filter
