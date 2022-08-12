@@ -9,7 +9,7 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: docker://ghcr.io/trustedcomputinggroup/markdown:r0.0.4
+  image: 'Dockerfile'
   args:
     - '--template=eisvogel.latex'
     - '--resource-path=/resources'
