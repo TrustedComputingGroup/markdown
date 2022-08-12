@@ -35,3 +35,5 @@ RUN tlmgr update --self && \
     textpos \
     anyfontsize \
     transparent
+
+RUN npm install --global mermaid-filter
