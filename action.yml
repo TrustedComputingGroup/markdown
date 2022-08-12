@@ -14,6 +14,7 @@ runs:
     # Detect this by stripping off 'refs/tags/v' from the ref used for the action and comparing it to the ref.
     # Otherwise, build the container fresh.
     - id: get-container
+      shell: bash
       env:
         ACTION_REF: ${{ github.action_ref }}
       run: |
