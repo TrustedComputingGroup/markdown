@@ -43,6 +43,8 @@ RUN apk upgrade && apk add --no-cache \
     npm \
     chromium
 
+RUN apk update && apk add --upgrade texlive
+
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
     PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 
