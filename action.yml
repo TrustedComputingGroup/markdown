@@ -12,7 +12,8 @@ runs:
   steps:
     # There are some configuration dependencies in /data in the container.
     # These are required for Mermaid.
-    - run: cp /data/* .
+    # Some of these are dotfiles, so we have to use this weird cp command.
+    - run: cp /data/.[^.]* .
       shell: sh
     - run: pandoc \
           --embed-resources \
