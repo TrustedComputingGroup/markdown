@@ -11,6 +11,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
+    - '--self-contained'
     - '--template=eisvogel.latex'
     - '--filter=mermaid-filter'
     - '--resource-path=.;/resources'
