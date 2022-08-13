@@ -11,6 +11,7 @@ runs:
   using: 'composite'
   steps:
     - run: cp /data/* .
+      shell: bash
     - uses: 'Dockerfile'
       with:
         args:
