@@ -49,7 +49,7 @@ and brands contained herein are the property of their respective owners.
 
 # Introduction
 
-Published specification, with no list of tables.
+Published specification, with no list of tables, and some figures.
 
 ## Details
 
@@ -60,7 +60,29 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
 fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 culpa qui officia deserunt mollit anim id est laborum.
 
-## Tables
+## Figures
+
+### Sequence
+
+```mermaid
+sequenceDiagram
+Host->>TPM: TPM2_Startup
+loop Measurements
+    Host->>TPM: TPM2_PCR_Extend
+end
+Host->>TPM: TPM2_Quote
+TPM->>Host: <quoted PCRs>
+```
+
+### Flowchart
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
 
 ### Mandatory Algorithms
 
