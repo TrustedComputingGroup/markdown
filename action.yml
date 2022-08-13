@@ -27,6 +27,5 @@ runs:
     - '--metadata=contact:admin@trustedcomputinggroup.org'
     - '--from=markdown+implicit_figures'
     - '--to=pdf'
-    - '--pdf-engine=pdflatex'
     - '${{ inputs.input-md }}'
     - '--output=${{ inputs.output-pdf }}'

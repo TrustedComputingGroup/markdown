@@ -62,7 +62,7 @@ culpa qui officia deserunt mollit anim id est laborum.
 
 ## Figures
 
-### Quoting PCRs
+### Sequence
 
 ```mermaid
 sequenceDiagram
@@ -74,13 +74,15 @@ Host->>TPM: TPM2_Quote
 TPM->>Host: <quoted PCRs>
 ```
 
-### A Computer
+### Flowchart
 
-![Computer](computer.jpg)
-
-![Star](star.png)
-
-## Tables
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
 
 ### Mandatory Algorithms
 
