@@ -14,7 +14,7 @@ runs:
     - '--self-contained'
     - '--template=eisvogel.latex'
     - '--filter=mermaid-filter'
-    - '--resource-path=.;/resources'
+    - '--resource-path=.:/resources'
     - '--data-dir=/resources'
     - '--toc'
     - '--variable=block-headings'
