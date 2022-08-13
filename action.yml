@@ -14,23 +14,23 @@ runs:
       shell: bash
     - uses: 'Dockerfile'
       with:
-        args:
-          - '--embed-resources'
-          - '--standalone'
-          - '--template=eisvogel.latex'
-          - '--filter=mermaid-filter'
-          - '--resource-path=.:/resources'
-          - '--data-dir=/resources'
-          - '--toc'
-          - '--variable=block-headings'
-          - '--metadata=titlepage:true'
-          - '--metadata=titlepage-background:/resources/img/cover.png'
-          - '--metadata=logo:/resources/img/tcg.png'
-          - '--metadata=titlepage-rule-height:0'
-          - '--metadata=colorlinks:true'
-          - '--metadata=toc-own-page:true'
-          - '--metadata=contact:admin@trustedcomputinggroup.org'
-          - '--from=markdown+implicit_figures'
-          - '--to=pdf'
-          - '${{ inputs.input-md }}'
-          - '--output=${{ inputs.output-pdf }}'
+        args: |
+          --embed-resources \
+          --standalone \
+          --template=eisvogel.latex \
+          --filter=mermaid-filter \
+          --resource-path=.:/resources \
+          --data-dir=/resources \
+          --toc \
+          --variable=block-headings \
+          --metadata=titlepage:true \
+          --metadata=titlepage-background:/resources/img/cover.png \
+          --metadata=logo:/resources/img/tcg.png \
+          --metadata=titlepage-rule-height:0 \
+          --metadata=colorlinks:true \
+          --metadata=toc-own-page:true \
+          --metadata=contact:admin@trustedcomputinggroup.org \
+          --from=markdown+implicit_figures \
+          --to=pdf \
+          ${{ inputs.input-md }} \
+          --output=${{ inputs.output-pdf }}
