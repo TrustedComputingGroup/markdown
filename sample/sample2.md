@@ -76,7 +76,7 @@ TPM->>Host: <quoted PCRs>
 
 ### A Computer
 
-![Computer](./sample2-img/computer.jpg)
+![Computer](/sample/sample2-img/computer.jpg)
 
 ## Tables
 
