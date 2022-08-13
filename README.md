@@ -27,13 +27,17 @@ on:
 jobs:
   render:
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/trustedcomputinggroup/pandoc:latest
+    permissions:
+      contents: read
     name: Render the example text
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
       - name: Render
-        uses: trustedcomputinggroup/markdown@v0.0.6
+        uses: trustedcomputinggroup/markdown@latest
         with:
           input-md: lorem.md
           output-pdf: lorem.pdf
