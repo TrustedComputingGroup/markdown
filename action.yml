@@ -12,7 +12,7 @@ runs:
   image: 'Dockerfile'
   args:
     - '--template=eisvogel.latex'
-    - '--filter=mermaid-filter+implicit_figures'
+    - '--filter=mermaid-filter'
     - '--resource-path=.;/resources'
     - '--data-dir=/resources'
     - '--toc'
@@ -24,7 +24,7 @@ runs:
     - '--metadata=colorlinks:true'
     - '--metadata=toc-own-page:true'
     - '--metadata=contact:admin@trustedcomputinggroup.org'
-    - '--from=markdown'
+    - '--from=markdown+implicit_figures'
     - '--to=pdf'
     - '${{ inputs.input-md }}'
     - '--output=${{ inputs.output-pdf }}'
