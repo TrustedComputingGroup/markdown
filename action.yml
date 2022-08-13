@@ -21,6 +21,7 @@ runs:
         --standalone
         --template=eisvogel.latex
         --filter=mermaid-filter
+        --filter=pandoc-crossref
         --resource-path=.:/resources
         --data-dir=/resources
         --toc
