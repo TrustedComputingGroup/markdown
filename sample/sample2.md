@@ -76,27 +76,9 @@ TPM->>Host: <quoted PCRs>
 
 ### A Computer
 
-a
+![Computer](computer.jpg)
 
-![Computer](computer.jpg "computer")
-
-b
-
-![Computer](computer.jpg "computer"){width=30%}
-
-c
-
-![](computer.jpg "computer")
-
-d
-
-![](computer.jpg "computer"){width=30%}
-
-e
-
-<img src="computer.jpg" title="some computer" alt="alt text" style="display: block; margin: auto;" />
-
-f
+![Star](star.png)
 
 ## Tables
 
