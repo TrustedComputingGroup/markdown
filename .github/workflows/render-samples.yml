@@ -1,4 +1,4 @@
-name: action validation
+name: render samples
 
 on:
   pull_request:
@@ -7,6 +7,8 @@ jobs:
   render-samples:
 
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/trustedcomputinggroup/pandoc:0.0.2
     permissions:
       contents: read
 

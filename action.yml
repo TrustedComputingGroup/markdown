@@ -10,11 +10,11 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    # There are some configuration dependencies in /data in the container.
+    # These are required for Mermaid.
     - run: cp /data/* .
       shell: bash
-    - uses: 'Dockerfile'
-      with:
-        args: |
+    - run: pandoc \
           --embed-resources \
           --standalone \
           --template=eisvogel.latex \
@@ -34,3 +34,4 @@ runs:
           --to=pdf \
           ${{ inputs.input-md }} \
           --output=${{ inputs.output-pdf }}
+      shell: bash
