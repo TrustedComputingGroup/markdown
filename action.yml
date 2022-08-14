@@ -9,10 +9,6 @@ inputs:
     required: true
 runs:
   using: 'composite'
-  env:
-    MERMAID_FILTER_THEME: "forest"
-    MERMAID_FILTER_CAPTION: "true"
-    MERMAID_FILTER_FORMAT: "svg"
   steps:
     # There are some configuration dependencies required for Mermaid.
     # They have to be in the current directory.
@@ -50,3 +46,7 @@ runs:
         ${{ inputs.input-md }}
         --output=${{ inputs.output-pdf }}
       shell: sh
+      env:
+        MERMAID_FILTER_THEME: "forest"
+        MERMAID_FILTER_CAPTION: "true"
+        MERMAID_FILTER_FORMAT: "svg"
