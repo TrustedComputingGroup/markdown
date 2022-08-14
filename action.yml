@@ -29,6 +29,7 @@ runs:
             ]
         }
         EOF
+      shell: sh
     - run: >
         pandoc
         --embed-resources
