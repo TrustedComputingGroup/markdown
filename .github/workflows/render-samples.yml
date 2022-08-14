@@ -8,7 +8,7 @@ jobs:
 
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/trustedcomputinggroup/pandoc:0.0.2
+      image: ghcr.io/trustedcomputinggroup/pandoc:latest
     permissions:
       contents: read
 
