@@ -19,13 +19,13 @@ jobs:
       - name: Run the action on sample1
         uses: ./
         with:
-          input-md: sample/sample1.md
+          input-md: sample1.md
           output-pdf: sample1.pdf
 
       - name: Run the action on sample2
         uses: ./
         with:
-          input-md: sample/sample2.md
+          input-md: sample2.md
           output-pdf: sample2.pdf
 
       - name: Upload Artifact
