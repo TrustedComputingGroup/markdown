@@ -48,5 +48,4 @@ runs:
       shell: sh
       env:
         MERMAID_FILTER_THEME: "forest"
-        MERMAID_FILTER_CAPTION: "true"
-        MERMAID_FILTER_FORMAT: "svg"
+        MERMAID_FILTER_FORMAT: "pdf"
