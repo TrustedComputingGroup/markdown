@@ -10,10 +10,25 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    # There are some configuration dependencies in /data in the container.
-    # These are required for Mermaid.
-    # Some of these are dotfiles, so we have to use this weird cp command.
-    - run: cp /data/.[^.]* .
+    # There are some configuration dependencies required for Mermaid.
+    # They have to be in the current directory.
+    - run: |
+        cat << EOF > ./.mermaid-config.json
+        {
+          "theme": "neutral"
+        }
+        EOF
+      shell: sh
+    - run: |
+        cat << EOF > ./.puppeteer.json
+        {
+            "executablePath": "/usr/bin/chromium-browser",
+            "args": [
+                "--no-sandbox",
+                "--disable-setuid-sandbox"
+            ]
+        }
+        EOF
       shell: sh
     - run: >
         pandoc
