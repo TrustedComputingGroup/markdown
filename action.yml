@@ -13,13 +13,6 @@ runs:
     # There are some configuration dependencies required for Mermaid.
     # They have to be in the current directory.
     - run: |
-        cat << EOF > ./.mermaid-config.json
-        {
-          "theme": "neutral"
-        }
-        EOF
-      shell: sh
-    - run: |
         cat << EOF > ./.puppeteer.json
         {
             "executablePath": "/usr/bin/chromium-browser",
@@ -53,3 +46,6 @@ runs:
         ${{ inputs.input-md }}
         --output=${{ inputs.output-pdf }}
       shell: sh
+      env:
+        MERMAID_FILTER_THEME: "forest"
+        MERMAID_FILTER_FORMAT: "pdf"
