@@ -6,11 +6,50 @@ Write normal Markdown, with a YAML front matter with the relevant metadata. See 
 
 TCG makes use of a gray box for "informative text." To write informative text in your Markdown source, use the block-quote syntax:
 
-```
+```md
 > Informative text goes here!
 >
 > It can be multiple paragraphs, if you wish.
 ```
+
+You can include diagrams using [Mermaid](https://mermaid-js.github.io/mermaid/#/) syntax:
+
+````md
+```{.mermaid caption="startup"}
+sequenceDiagram
+Host->>TPM: TPM2_Startup
+loop Measurements
+    Host->>TPM: TPM2_PCR_Extend
+end
+Host->>TPM: TPM2_Quote
+TPM->>Host: <quoted PCRs>
+```
+````
+
+The code above generates a diagram that looks like this:
+
+```mermaid
+sequenceDiagram
+Host->>TPM: TPM2_Startup
+loop Measurements
+    Host->>TPM: TPM2_PCR_Extend
+end
+Host->>TPM: TPM2_Quote
+TPM->>Host: <quoted PCRs>
+```
+
+You can also images. Note: GitHub and Pandoc disagree somewhat on the paths to images,
+so the safest path to success is to keep the Markdown source and image files all
+together in the **root** of the repository.
+
+```md
+![computer](computer.jpg){#fig:computer}
+```
+
+produces:
+
+![computer](computer.jpg)
+
 
 Here is an example of a GitHub Action configuration that renders a Markdown file to PDF, attaches it to the workflow, and checks it into the repo (if not a pull request):
 
