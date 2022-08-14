@@ -18,7 +18,7 @@ runs:
             "theme": "forest",
             "caption": "true",
             "format": "svg",
-            "width": 1600,
+            "width": 1600
         }
         EOF
       shell: sh
