@@ -63,13 +63,9 @@ culpa qui officia deserunt mollit anim id est laborum.
 
 ## Figures
 
-### PNG
+### Computer
 
-![robot](robot.png) {#fig:robot1}
-
-### SVG
-
-![robot](robot.svg) {#fig:robot2}
+![a computer](computer.jpg)
 
 ## Tables
 
