@@ -65,6 +65,8 @@ culpa qui officia deserunt mollit anim id est laborum.
 
 ### Computer
 
+To include an image in the list of figures, use the "#fig" attribute.
+
 ![a computer](computer.jpg){#fig:computer}
 
 ### Sequence
@@ -80,6 +82,11 @@ TPM->>Host: <quoted PCRs>
 ```
 
 ### Flowchart
+
+To include a Mermaid diagram in the list of figures, use the "caption" option.
+
+See the [mermaid-filter documentation](https://github.com/raghur/mermaid-filter#options)
+for a list of all the options.
 
 ```{.mermaid caption="abcd"}
 graph TD;
