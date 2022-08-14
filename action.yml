@@ -15,7 +15,9 @@ runs:
     - run: |
         cat << EOF > ./.mermaid-config.json
         {
-          "theme": "neutral"
+            "theme": "forest",
+            "caption": "true",
+            "format": "pdf"
         }
         EOF
       shell: sh
