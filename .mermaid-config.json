@@ -1,4 +1,5 @@
 {
   "theme": "neutral",
-  "caption" "true"
+  "caption": "true",
+  "format": "pdf"
 }
