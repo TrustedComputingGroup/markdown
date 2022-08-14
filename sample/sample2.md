@@ -7,6 +7,7 @@ date: 8/11/2022
 year: 2022
 type: SPECIFICATION
 status: PUBLISHED
+lof: true
 ...
 
 \newpage
@@ -49,7 +50,7 @@ and brands contained herein are the property of their respective owners.
 
 # Introduction
 
-Published specification, with no list of tables, and some figures.
+Published specification with a list of figures.
 
 ## Details
 
@@ -62,9 +63,17 @@ culpa qui officia deserunt mollit anim id est laborum.
 
 ## Figures
 
+### PNG
+
+![robot](robot.png){#fig:robot1}
+
+### SVG
+
+![robot](robot.svg){#fig:robot2}
+
 ### Sequence
 
-```mermaid
+```{.mermaid caption="startup"}
 sequenceDiagram
 Host->>TPM: TPM2_Startup
 loop Measurements
@@ -76,7 +85,7 @@ TPM->>Host: <quoted PCRs>
 
 ### Flowchart
 
-```mermaid
+```{.mermaid caption="abcd"}
 graph TD;
     A-->B;
     A-->C;
