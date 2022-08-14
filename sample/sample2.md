@@ -65,11 +65,11 @@ culpa qui officia deserunt mollit anim id est laborum.
 
 ### PNG
 
-![robot](robot.png){#fig:robot1}
+![robot](robot.png) {#fig:robot1}
 
 ### SVG
 
-![robot](robot.svg){#fig:robot2}
+![robot](robot.svg) {#fig:robot2}
 
 ### Sequence
 
