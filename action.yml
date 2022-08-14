@@ -34,6 +34,7 @@ runs:
         --data-dir=/resources
         --toc
         --variable=block-headings
+        --variable=table-use-row-colors
         --metadata=titlepage:true
         --metadata=titlepage-background:/resources/img/cover.png
         --metadata=logo:/resources/img/tcg.png
