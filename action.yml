@@ -41,7 +41,7 @@ runs:
       shell: sh
     # Grab the date from the front matter and generate the full date and year.
     - run: |
-        DATE=$(grep date: ./sample2.md | head -n 1 | cut -f 2 -w)
+        DATE=$(grep date: ${{ inputs.input-md }} | head -n 1 | cut -d ' ' -f 2)
         YEAR=$(date --date=$DATE +%Y)
         ENGLISH_DATE=$(date --date=$DATE "+%B %-d, %Y")
       shell: bash
