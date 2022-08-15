@@ -67,7 +67,7 @@ culpa qui officia deserunt mollit anim id est laborum.
 
 To include an image in the list of figures, use the "#fig" attribute.
 
-![a computer](computer.jpg){#fig:computer}
+![Picture of a computer](computer.jpg)
 
 ### Sequence
 
@@ -76,7 +76,7 @@ To include a Mermaid diagram in the list of figures, use the "caption" option.
 See the [mermaid-filter documentation](https://github.com/raghur/mermaid-filter#options)
 for a list of all the options.
 
-```{.mermaid caption="startup"}
+```mermaid {caption="Startup sequence"}
 sequenceDiagram
 Host->>TPM: TPM2_Startup
 loop Measurements
@@ -88,7 +88,7 @@ TPM->>Host: <quoted PCRs>
 
 ### Flowchart
 
-```{.mermaid caption="abcd"}
+```mermaid {caption="Flowchart"}
 graph TD;
     A-->B;
     A-->C;
