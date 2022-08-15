@@ -10,7 +10,7 @@ status: DRAFT
 lot: true
 ...
 
-\newpage
+---
 
 # Disclaimers, Notices, and License Terms
 
@@ -37,7 +37,7 @@ Contact the Trusted Computing Group at www.trustedcomputinggroup.org for
 information on specification licensing through membership agreements. Any marks
 and brands contained herein are the property of their respective owners.
 
-\newpage
+---
 
 # Change History
 
@@ -46,7 +46,7 @@ and brands contained herein are the property of their respective owners.
 | 0.2/17       | 2022/08/10 | Initial draft   |
 | 0.2/18       | 2022/08/10 | Add page breaks |
 
-\newpage
+---
 
 # Introduction
 
