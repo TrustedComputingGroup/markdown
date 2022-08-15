@@ -23,6 +23,14 @@ runs:
         }
         EOF
       shell: sh
+    # GitHub Mermaid doesn't recognize the full ```{.mermaid ...} attributes-form
+    # Pandoc doesn't recognized mixed ```mermaid {...} form
+    # Hack: use sed to transform the former to the latter so everyone is happy
+    - run: >
+        sed -i
+        's/```mermaid *{/```{.mermaid /g'
+        ${{ inputs.input-md }}
+      shell: sh
     - run: >
         pandoc
         --embed-resources
