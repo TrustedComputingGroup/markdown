@@ -10,6 +10,10 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    # let the container take ownership of the repo dir, in case the user wants to check in the results
+    # workaround to https://github.com/actions/runner/issues/2033
+    - run: chown -R $(id -u):$(id -g) $PWD
+      shell: sh
     # There are some configuration dependencies required for Mermaid.
     # They have to be in the current directory.
     - run: |
