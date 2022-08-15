@@ -42,8 +42,8 @@ runs:
     # Grab the date from the front matter and generate the full date and year.
     - run: |
         DATE=$(grep date: ${{ inputs.input-md }} | head -n 1 | cut -d ' ' -f 2)
-        YEAR=$(date --date=$DATE +%Y)
-        ENGLISH_DATE=$(date --date=$DATE "+%B %-d, %Y")
+        export YEAR=$(date --date=$DATE +%Y)
+        export ENGLISH_DATE=$(date --date=$DATE "+%B %-d, %Y")
       shell: bash
     - run: >
         pandoc
