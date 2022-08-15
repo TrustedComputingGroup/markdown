@@ -28,6 +28,7 @@ runs:
     # Hack: use sed to transform the former to the latter so everyone is happy
     - run: >
         sed -i 's/```mermaid *{/```{.mermaid /g'
+      shell: sh
     - run: >
         pandoc
         --embed-resources
