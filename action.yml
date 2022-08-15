@@ -42,9 +42,12 @@ runs:
     # Grab the date from the front matter and generate the full date and year.
     - run: |
         DATE=$(grep date: ${{ inputs.input-md }} | head -n 1 | cut -d ' ' -f 2)
-        export YEAR=$(date --date=$DATE +%Y)
-        export ENGLISH_DATE=$(date --date=$DATE "+%B %-d, %Y")
+        YEAR=$(date --date=$DATE +%Y)
+        echo "::set-output name=year::$YEAR"
+        DATE_ENGLISH=$(date --date=$DATE "+%B %-d, %Y")
+        echo "::set-output name=date-english::$DATE_ENGLISH"
       shell: bash
+      id: date
     - run: >
         pandoc
         --embed-resources
@@ -57,8 +60,8 @@ runs:
         --toc
         --variable=block-headings
         --variable=table-use-row-colors
-        --metadata=date-english:"$ENGLISH_DATE"
-        --metadata=year:$YEAR
+        --metadata=date-english:"${{ steps.date.outputs.date-english }}"
+        --metadata=year:"${{ steps.date.outputs.year }}"
         --metadata=titlepage:true
         --metadata=titlepage-background:/resources/img/cover.png
         --metadata=logo:/resources/img/tcg.png
