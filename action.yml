@@ -33,10 +33,11 @@ runs:
       shell: sh
     # \newpage is rendered as the string "\newpage" in GitHub markdown.
     # Transform horizontal rules into \newpages.
-    # Exception: the YAML front matter of the document.
+    # Exception: the YAML front matter of the document, so undo the first instance.
     - run: >
         sed -i
-        's/^---$/\newpage/2g'
+        's/^---$/\newpage/g'
+        -e 's/\\\newpage/---/1'
         ${{ inputs.input-md }}
       shell: sh
     - run: >
