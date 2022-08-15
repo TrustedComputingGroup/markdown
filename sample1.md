@@ -65,7 +65,7 @@ culpa qui officia deserunt mollit anim id est laborum.
 
 ### Computer
 
-![a computer](computer.jpg){#fig:computer}
+![Picture of a computer](computer.jpg)
 
 ## Tables
 

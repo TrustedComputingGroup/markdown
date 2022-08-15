@@ -36,7 +36,7 @@ runs:
     # Exception: the YAML front matter of the document, so undo the first instance.
     - run: >
         sed -i
-        's/^---$/\\newpage/g;s/\\\newpage/---/1'
+        's/^---$/\\newpage/g;s/\\newpage/---/1'
         ${{ inputs.input-md }}
       shell: sh
     - run: >
