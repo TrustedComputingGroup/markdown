@@ -2,9 +2,7 @@
 title: "Lorem Ipsum Platform Dolor Sit Amet Profile for TPM 2.0"
 version: 0.1
 revision: 196
-date-english: August 11, 2022
-date: 8/11/2022
-year: 2022
+date: 2022/8/2
 type: SPECIFICATION
 status: DRAFT
 lot: true

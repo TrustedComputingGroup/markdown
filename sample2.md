@@ -2,9 +2,7 @@
 title: "Important TCG Document"
 version: 1.0
 revision: 3
-date-english: August 11, 2022
 date: 8/11/2022
-year: 2022
 type: SPECIFICATION
 status: PUBLISHED
 lof: true
