@@ -7,6 +7,8 @@ inputs:
   output-pdf:
     description: 'The name of the rendered PDF file'
     required: true
+  output-docx:
+    description: 'The name of the rendered DOCX file'
 runs:
   using: 'composite'
   steps:
@@ -78,6 +80,36 @@ runs:
         ${{ inputs.input-md }}
         --output=${{ inputs.output-pdf }}
       shell: sh
+      env:
+        MERMAID_FILTER_THEME: "forest"
+        MERMAID_FILTER_FORMAT: "pdf"
+    - run: >
+        pandoc
+        --embed-resources
+        --standalone
+        --template=eisvogel.latex
+        --filter=mermaid-filter
+        --filter=pandoc-crossref
+        --resource-path=.:/resources
+        --data-dir=/resources
+        --toc
+        --variable=block-headings
+        --variable=table-use-row-colors
+        --metadata=date-english:"${{ steps.date.outputs.date-english }}"
+        --metadata=year:"${{ steps.date.outputs.year }}"
+        --metadata=titlepage:true
+        --metadata=titlepage-background:/resources/img/cover.png
+        --metadata=logo:/resources/img/tcg.png
+        --metadata=titlepage-rule-height:0
+        --metadata=colorlinks:true
+        --metadata=toc-own-page:true
+        --metadata=contact:admin@trustedcomputinggroup.org
+        --from=markdown+implicit_figures
+        --to=docx
+        ${{ inputs.input-md }}
+        --output=${{ inputs.output-docx }}
+      shell: sh
+      if: ${{ inputs.output-docx }} 
       env:
         MERMAID_FILTER_THEME: "forest"
         MERMAID_FILTER_FORMAT: "pdf"
