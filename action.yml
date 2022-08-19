@@ -65,6 +65,7 @@ runs:
         --data-dir=/resources
         --toc
         --variable=block-headings
+        --variable=numbersections
         --variable=table-use-row-colors
         --metadata=date-english:"${{ steps.date.outputs.date-english }}"
         --metadata=year:"${{ steps.date.outputs.year }}"
