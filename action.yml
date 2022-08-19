@@ -92,7 +92,7 @@ runs:
         --resource-path=.:/resources
         --data-dir=/resources
         --from=markdown+implicit_figures
-        --reference-doc=/resources/template/tcg_template.docx
+        --reference-doc=/resources/templates/tcg_template.docx
         --to=docx
         ${{ inputs.input-md }}
         --output=${{ inputs.output-docx }}
