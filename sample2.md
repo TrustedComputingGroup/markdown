@@ -53,7 +53,9 @@ Published specification with a list of figures.
 ## Details
 
 > **Start of informative comment**
+>
 > Informative comment.
+>
 > **End of informative comment**
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
