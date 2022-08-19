@@ -21,15 +21,17 @@ jobs:
         with:
           input-md: sample1.md
           output-pdf: sample1.pdf
+          output-docx: sample1.docx
 
       - name: Run the action on sample2
         uses: ./
         with:
           input-md: sample2.md
           output-pdf: sample2.pdf
+          output-docx: sample2.docx
 
       - name: Upload Artifact
         uses: actions/upload-artifact@master
         with:
           name: samples
-          path: sample*.pdf
+          path: sample*.*
