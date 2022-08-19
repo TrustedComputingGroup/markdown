@@ -105,6 +105,7 @@ runs:
         --metadata=toc-own-page:true
         --metadata=contact:admin@trustedcomputinggroup.org
         --from=markdown+implicit_figures
+        --reference-doc=tcg_template.docx
         --to=docx
         ${{ inputs.input-md }}
         --output=${{ inputs.output-docx }}
