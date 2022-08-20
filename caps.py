@@ -8,7 +8,7 @@ Code, link URLs, etc. are not affected.
 from pandocfilters import toJSONFilter, Str
 
 def caps(key, value, format, meta):
-  if key == 'Str':
+  if key == 'BlockQuote':
     return Str(value.upper())
 
 if __name__ == "__main__":
