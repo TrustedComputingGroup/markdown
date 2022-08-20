@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
 
 """
-Pandoc filter to convert all regular text to uppercase.
-Code, link URLs, etc. are not affected.
+Pandoc filter to convert all block quotes to TCG Informative text.
 """
 
 from pandocfilters import toJSONFilter, Str
 
-def caps(key, value, format, meta):
+def informative(key, value, format, meta):
   if key == 'BlockQuote':
-    return Str(value.upper())
+    return Div( value, attributes={'custom-style': 'TCG Informative'} )
 
 if __name__ == "__main__":
-  toJSONFilter(caps)
+  toJSONFilter(informative)
