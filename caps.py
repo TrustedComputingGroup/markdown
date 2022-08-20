@@ -4,7 +4,7 @@
 Pandoc filter to convert all block quotes to TCG Informative text.
 """
 
-from pandocfilters import toJSONFilter, Str
+from pandocfilters import toJSONFilter, Str, Div
 
 def informative(key, value, format, meta):
   if key == 'BlockQuote':
