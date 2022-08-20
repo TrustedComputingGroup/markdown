@@ -88,6 +88,7 @@ runs:
         pandoc
         --embed-resources
         --standalone
+        --filter=caps.py
         --filter=mermaid-filter
         --filter=pandoc-crossref
         --resource-path=.:/resources
