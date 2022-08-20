@@ -88,7 +88,7 @@ runs:
         pandoc
         --embed-resources
         --standalone
-        --filter=/resources/filter/info.py
+        --filter=/resources/filters/info.py
         --filter=mermaid-filter
         --filter=pandoc-crossref
         --resource-path=.:/resources
