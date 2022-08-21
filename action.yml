@@ -150,10 +150,15 @@ runs:
         --filter=pandoc-crossref
         --resource-path=.:/resources
         --from=markdown+implicit_figures
-        --reference-doc /resources/templates/tcg_template.docx
+        --reference-doc=/resources/templates/tcg_template.docx
         --to=docx
         ${{ inputs.input-md }}.before
         ${{ inputs.input-md }}
         --output=${{ inputs.diff-docx }}
       shell: sh
       if: ${{ inputs.diff-docx }} && ${{ github.event.pull_request.base.ref }}
+    # Delete the temporary 'before' file
+    - run: rm ${{ inputs.input-md }}.before
+      shell: sh
+      if: ${{ inputs.diff-docx }} && ${{ github.event.pull_request.base.ref }}
+
