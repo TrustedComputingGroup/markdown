@@ -140,7 +140,7 @@ runs:
         MERMAID_FILTER_FORMAT: "pdf"
     # Sync to the pull request base
     - run: >
-        git reset --hard ${{ github.event.pull_request.base.ref }}
+        git reset --hard origin/${{ github.event.pull_request.base.ref }}
       shell: sh
       if: ( ${{ inputs.diff-pdf }} || ${{ inputs.diff-docx }} ) && ${{ github.event.pull_request.base.ref }}
     # Run the sed hacks as above
