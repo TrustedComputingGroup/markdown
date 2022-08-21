@@ -145,9 +145,12 @@ runs:
         git reset --hard FETCH_HEAD
       shell: sh
       if: ( ${{ inputs.diff-pdf }} || ${{ inputs.diff-docx }} ) && ${{ github.event.pull_request.base.ref }}
+    # The file might be new, make sure it exists
+    - run: touch ${{ inputs.input-md }}
+      shell: sh
+      if: ( ${{ inputs.diff-pdf }} || ${{ inputs.diff-docx }} ) && ${{ github.event.pull_request.base.ref }}
     # Run the sed hacks as above
     - run: >
-        - run: >
         sed -i
         's/```mermaid *{/```{.mermaid /g'
         ${{ inputs.input-md }}
