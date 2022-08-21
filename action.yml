@@ -147,6 +147,9 @@ runs:
     - run: >
         pandiff
         --standalone
+        --filter=mermaid-filter
+        --filter=pandoc-crossref
+        --template=eisvogel.latex
         --resource-path=.:/resources
         --from=markdown+implicit_figures
         --to=pdf
@@ -159,8 +162,12 @@ runs:
     - run: >
         pandiff
         --standalone
+        --filter=/resources/filters/info.py
+        --filter=mermaid-filter
+        --filter=pandoc-crossref
         --resource-path=.:/resources
         --from=markdown+implicit_figures
+        --reference-doc=/resources/templates/tcg_template.docx
         --to=docx
         ${{ inputs.input-md }}.before
         ${{ inputs.input-md }}
