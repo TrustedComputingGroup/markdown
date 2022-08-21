@@ -150,7 +150,7 @@ runs:
         --filter=pandoc-crossref
         --resource-path=.:/resources
         --from=markdown+implicit_figures
-        --reference-doc=/resources/templates/tcg_template.docx
+        --reference-doc /resources/templates/tcg_template.docx
         --to=docx
         ${{ inputs.input-md }}.before
         ${{ inputs.input-md }}
