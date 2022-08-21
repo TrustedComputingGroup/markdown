@@ -9,6 +9,10 @@ inputs:
     required: true
   output-docx:
     description: 'The name of the rendered DOCX file'
+  diff-pdf:
+    description: 'The name of the rendered PDF diff'
+  diff-docx:
+    description: 'The name of the rendered DOCX diff'
 runs:
   using: 'composite'
   steps:
@@ -103,3 +107,108 @@ runs:
       env:
         MERMAID_FILTER_THEME: "forest"
         MERMAID_FILTER_FORMAT: "pdf"
+    - run: >
+        pandoc
+        --embed-resources
+        --standalone
+        --template=eisvogel.latex
+        --filter=mermaid-filter
+        --filter=pandoc-crossref
+        --resource-path=.:/resources
+        --data-dir=/resources
+        --toc
+        --variable=block-headings
+        --variable=numbersections
+        --variable=table-use-row-colors
+        --metadata=date-english:"${{ steps.date.outputs.date-english }}"
+        --metadata=year:"${{ steps.date.outputs.year }}"
+        --metadata=titlepage:true
+        --metadata=titlepage-background:/resources/img/cover.png
+        --metadata=logo:/resources/img/tcg.png
+        --metadata=titlepage-rule-height:0
+        --metadata=colorlinks:true
+        --metadata=toc-own-page:true
+        --metadata=contact:admin@trustedcomputinggroup.org
+        --from=markdown+implicit_figures
+        --to=latex
+        ${{ inputs.input-md }}
+        --output=tcg-markdown-diff-after.latex
+      shell: sh
+      if: ( ${{ inputs.diff-pdf }} || ${{ inputs.diff-docx }} ) && ${{ github.event.pull_request.base.ref }}
+      env:
+        MERMAID_FILTER_THEME: "forest"
+        MERMAID_FILTER_FORMAT: "pdf"
+    # Sync to the pull request base
+    - run: >
+        git reset --hard ${{ github.event.pull_request.base.ref }}
+      shell: sh
+      if: ( ${{ inputs.diff-pdf }} || ${{ inputs.diff-docx }} ) && ${{ github.event.pull_request.base.ref }}
+    # Run the sed hacks as above
+    - run: >
+        - run: >
+        sed -i
+        's/```mermaid *{/```{.mermaid /g'
+        ${{ inputs.input-md }}
+      shell: sh
+      if: ( ${{ inputs.diff-pdf }} || ${{ inputs.diff-docx }} ) && ${{ github.event.pull_request.base.ref }}
+    - run: >
+        sed -i
+        's/^---$/\\newpage/g;1s/\\newpage/---/g'
+        ${{ inputs.input-md }}
+      shell: sh
+      if: ( ${{ inputs.diff-pdf }} || ${{ inputs.diff-docx }} ) && ${{ github.event.pull_request.base.ref }}
+    # Render the 'before'
+    - run: >
+        pandoc
+        --embed-resources
+        --standalone
+        --template=eisvogel.latex
+        --filter=mermaid-filter
+        --filter=pandoc-crossref
+        --resource-path=.:/resources
+        --data-dir=/resources
+        --toc
+        --variable=block-headings
+        --variable=numbersections
+        --variable=table-use-row-colors
+        --metadata=date-english:"${{ steps.date.outputs.date-english }}"
+        --metadata=year:"${{ steps.date.outputs.year }}"
+        --metadata=titlepage:true
+        --metadata=titlepage-background:/resources/img/cover.png
+        --metadata=logo:/resources/img/tcg.png
+        --metadata=titlepage-rule-height:0
+        --metadata=colorlinks:true
+        --metadata=toc-own-page:true
+        --metadata=contact:admin@trustedcomputinggroup.org
+        --from=markdown+implicit_figures
+        --to=latex
+        ${{ inputs.input-md }}
+        --output=tcg-markdown-diff-before.latex
+      shell: sh
+      if: ( ${{ inputs.diff-pdf }} || ${{ inputs.diff-docx }} ) && ${{ github.event.pull_request.base.ref }}
+      env:
+        MERMAID_FILTER_THEME: "forest"
+        MERMAID_FILTER_FORMAT: "pdf"
+    # Finally, render the pandiffs
+    - run: >
+        pandiff
+        --standalone
+        --resource-path=.:/resources
+        --from=latex
+        --to=pdf
+        tcg-markdown-diff-before.latex
+        tcg-markdown-diff-after.latex
+        --output=${{ inputs.diff-pdf }}
+      shell: sh
+      if: ${{ inputs.diff-pdf }} && ${{ github.event.pull_request.base.ref }}
+    - run: >
+        pandiff
+        --standalone
+        --resource-path=.:/resources
+        --from=latex
+        --to=docx
+        tcg-markdown-diff-before.latex
+        tcg-markdown-diff-after.latex
+        --output=${{ inputs.diff-docx }}
+      shell: sh
+      if: ${{ inputs.diff-docx }} && ${{ github.event.pull_request.base.ref }}
