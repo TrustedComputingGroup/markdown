@@ -22,7 +22,6 @@ jobs:
           input-md: sample1.md
           output-pdf: sample1.pdf
           output-docx: sample1.docx
-          diff-pdf: sample1-diff.pdf
           diff-docx: sample1-diff.docx
 
       - name: Run the action on sample2
@@ -31,7 +30,6 @@ jobs:
           input-md: sample2.md
           output-pdf: sample2.pdf
           output-docx: sample2.docx
-          diff-pdf: sample2-diff.pdf
           diff-docx: sample2-diff.docx
 
       - name: Upload Artifact
