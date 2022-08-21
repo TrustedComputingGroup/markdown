@@ -201,6 +201,7 @@ runs:
         --resource-path=.:/resources
         --from=latex
         --to=pdf
+        --pdf-engine=pdflatex
         tcg-markdown-diff-before.latex
         tcg-markdown-diff-after.latex
         --output=${{ inputs.diff-pdf }}
