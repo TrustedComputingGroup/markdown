@@ -217,3 +217,10 @@ runs:
         --output=${{ inputs.diff-docx }}
       shell: sh
       if: ${{ inputs.diff-docx }} && ${{ github.event.pull_request.base.ref }}
+  post: # Clean up the Git state
+    - run: >
+        git fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin ${{ github.event.pull_request.head.ref }}
+        &&
+        git reset --hard FETCH_HEAD
+      shell: sh
+  post-if: ( ${{ inputs.diff-pdf }} || ${{ inputs.diff-docx }} ) && ${{ github.event.pull_request.base.ref }}
