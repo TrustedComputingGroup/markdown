@@ -12,7 +12,7 @@ lof: true
 
 # Disclaimers, Notices, and License Terms
 
-THIS SPECIFICATION IS PROVIDED “AS IS” WITH NO WARRANTIES WHATSOEVER, INCLUDING
+THIS DOCUMENT IS PROVIDED “AS IS” WITH NO WARRANTIES WHATSOEVER, INCLUDING
 ANY WARRANTY OF MERCHANTABILITY, NONINFRINGEMENT, FITNESS FOR ANY PARTICULAR
 PURPOSE, OR ANY WARRANTY OTHERWISE ARISING OUT OF ANY PROPOSAL, SPECIFICATION OR
 SAMPLE.
@@ -56,6 +56,8 @@ Published specification with a list of figures.
 >
 > Informative comment.
 >
+> Lots of information here.
+>
 > **End of informative comment**
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -84,7 +86,7 @@ for a list of all the options.
 sequenceDiagram
 Host->>TPM: TPM2_Startup
 loop Measurements
-    Host->>TPM: TPM2_PCR_Extend
+    Host->>TPM: TPM2_PCR_Event
 end
 Host->>TPM: TPM2_Quote
 TPM->>Host: <quoted PCRs>
@@ -94,7 +96,7 @@ TPM->>Host: <quoted PCRs>
 
 ```mermaid {caption="Flowchart"}
 graph TD;
-    A-->B;
+    A-->D;
     A-->C;
     B-->D;
     C-->D;

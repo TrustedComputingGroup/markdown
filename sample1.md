@@ -43,6 +43,7 @@ and brands contained herein are the property of their respective owners.
 | ------------ | ---------- | --------------- |
 | 0.2/17       | 2022/08/10 | Initial draft   |
 | 0.2/18       | 2022/08/10 | Add page breaks |
+| 0.2/19       | 2022/08/20 | Add new row     |
 
 ---
 
@@ -54,7 +55,7 @@ Draft specification, with a list of tables.
 
 > **Start of informative comment**
 >
-> Informative comment.
+> Uninformative comment.
 >
 > **End of informative comment**
 
@@ -69,7 +70,7 @@ culpa qui officia deserunt mollit anim id est laborum.
 
 ### Computer
 
-![Picture of a computer](computer.jpg)
+![Pictures of a computer](computer.jpg)
 
 ## Tables
 
@@ -86,11 +87,6 @@ Table: List of Mandatory Algorithms
 | TPM_ALG_RSA      | O           |
 | TPM_ALG_RSAES    | O           |
 | TPM_ALG_RSAPSS   | O           |
-| TPM_ALG_RSAOAEP  | O           |
-| TPM_ALG_AES      | M           |
-| TPM_ALG_SHA256   | M           |
-| TPM_ALG_SHA384   | M           |
-| TPM_ALG_SHA512   | O           |
 | TPM_ALG_HMAC     | M           |
 | TPM_ALG_SHA3_256 | O           |
 | TPM_ALG_SHA3_384 | O           |
@@ -112,7 +108,7 @@ Table: List of Mandatory Curves
 #include <string>
 
 int main() {
-    std::string result = "Trusted Computing Group";
+    std::string result = "TRUSTED Computing Group";
     return 1;
 }
 ```
