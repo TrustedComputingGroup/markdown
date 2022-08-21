@@ -39,3 +39,9 @@ jobs:
         with:
           name: samples
           path: sample*.*
+
+      - name: Upload Temp Latexes
+        uses: actions/upload-artifact@master
+        with:
+          name: diffs
+          path: tcg-markdown-diff-*.latex
