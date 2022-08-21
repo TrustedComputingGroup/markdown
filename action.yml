@@ -142,7 +142,7 @@ runs:
     - run: >
         git fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin ${{ github.event.pull_request.base.ref }}
         &&
-        git reset --hard origin ${{ github.event.pull_request.base.ref }}
+        git reset --hard FETCH_HEAD
       shell: sh
       if: ( ${{ inputs.diff-pdf }} || ${{ inputs.diff-docx }} ) && ${{ github.event.pull_request.base.ref }}
     # Run the sed hacks as above
