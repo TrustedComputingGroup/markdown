@@ -59,11 +59,7 @@ Draft specification, with a list of tables.
 
 ## Details
 
-> **Start of informative comment**
->
 > Informative comment.
->
-> **End of informative comment**
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -124,7 +120,15 @@ int main() {
 }
 ```
 
-## Another Table
+## Another Couple Tables
+
+This table has no caption.
+
+| **Column 1** | **Column 2** | **Column 3** |
+| ------------ | ------------ | ------------ |
+| AAAAAAAA     | BBBBBBBB     | CCCCCCCC     |
+
+blah blah
 
 Table: Fantastic Table
 
