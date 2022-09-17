@@ -84,7 +84,7 @@ runs:
         --metadata=titlepage-rule-height:0
         --metadata=colorlinks:true
         --metadata=contact:admin@trustedcomputinggroup.org
-        --from=markdown+implicit_figures
+        --from=markdown+implicit_figures+table_captions
         --to=pdf
         ${{ inputs.input-md }}
         --output=${{ inputs.output-pdf }}
@@ -113,7 +113,7 @@ runs:
         --metadata=titlepage-rule-height:0
         --metadata=colorlinks:true
         --metadata=contact:admin@trustedcomputinggroup.org
-        --from=markdown+implicit_figures
+        --from=markdown+implicit_figures+table_captions
         --to=latex
         ${{ inputs.input-md }}
         --output=${{ inputs.output-tex }}
@@ -131,7 +131,7 @@ runs:
         --filter=pandoc-crossref
         --resource-path=.:/resources
         --data-dir=/resources
-        --from=markdown+implicit_figures
+        --from=markdown+implicit_figures+table_captions
         --reference-doc=/resources/templates/tcg_template.docx
         --to=docx
         ${{ inputs.input-md }}
