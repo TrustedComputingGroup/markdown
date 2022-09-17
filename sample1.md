@@ -3,9 +3,8 @@ title: "Lorem Ipsum Platform Dolor Sit Amet Profile for TPM 2.0"
 version: 0.1
 revision: 196
 date: 2022/8/2
-type: SPECIFICATION
+type: REFERENCE
 status: DRAFT
-lot: true
 ...
 
 ---
@@ -43,6 +42,14 @@ and brands contained herein are the property of their respective owners.
 | ------------ | ---------- | --------------- |
 | 0.2/17       | 2022/08/10 | Initial draft   |
 | 0.2/18       | 2022/08/10 | Add page breaks |
+
+---
+
+\tableofcontents
+
+\listoftables
+
+\listoffigures
 
 ---
 

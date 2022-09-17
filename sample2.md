@@ -3,9 +3,8 @@ title: "Important TCG Document"
 version: 1.0
 revision: 3
 date: 8/11/2022
-type: SPECIFICATION
+type: REFERENCE
 status: PUBLISHED
-lof: true
 ...
 
 ---
@@ -43,6 +42,14 @@ and brands contained herein are the property of their respective owners.
 | ------------ | ---------- | --------------- |
 | 0.2/17       | 2022/08/10 | Initial draft   |
 | 0.2/18       | 2022/08/10 | Add page breaks |
+
+---
+
+\tableofcontents
+
+\listoftables
+
+\listoffigures
 
 ---
 
