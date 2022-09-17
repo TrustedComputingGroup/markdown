@@ -34,4 +34,4 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: samples
-          path: sample*.*
+          path: sample*.docx sample*.tex sample*.pdf
