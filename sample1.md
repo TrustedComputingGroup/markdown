@@ -28,9 +28,9 @@ any information herein. This document is copyrighted by Trusted Computing Group
 follows: You may not copy or reproduce the document or distribute it to others
 without written permission from TCG, except that you may freely do so for the
 purposes of (a) examining or implementing TCG specifications or (b) developing,
-testing, or promoting information technology standards and best practices, so long
-as you distribute the document with these disclaimers, notices, and license terms.
-Contact the Trusted Computing Group at www.trustedcomputinggroup.org for
+testing, or promoting information technology standards and best practices, so
+long as you distribute the document with these disclaimers, notices, and license
+terms. Contact the Trusted Computing Group at www.trustedcomputinggroup.org for
 information on specification licensing through membership agreements. Any marks
 and brands contained herein are the property of their respective owners.
 
@@ -73,6 +73,14 @@ culpa qui officia deserunt mollit anim id est laborum.
 ### Computer
 
 ![Picture of a computer](computer.jpg)
+
+The following image doesn't have a caption and isn't in the table of figures.
+
+![](phone.jpg)
+
+![Keyboard](keyboard.jpg)
+
+![3 locks](3locks.jpg)
 
 ## Tables
 
