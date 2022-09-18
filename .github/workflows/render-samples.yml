@@ -12,8 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/trustedcomputinggroup/pandoc:latest
-    permissions:
-      contents: read
 
     steps:
       - name: Checkout repository
