@@ -95,7 +95,8 @@ It will look like this in the GitHub markdown view:
 >
 > It can be multiple paragraphs, if you wish.
 
-The tool will insert the "Start of informative text" / "End of informative text" delimiters to the informative text blocks automatically.
+The tool will insert the "Start of informative text" / "End of informative text" delimiters
+into the informative text blocks automatically.
 
 ## Diagrams
 
@@ -158,7 +159,7 @@ produces:
 In the example above, "Image B" is the name shown in the figure caption and table of figures.
 To exclude the caption and table-of-figures entry, leave the caption blank (i.e., `![](computer.jpg)`)
 
-See the [sample](sample) directory for more examples.
+See the samples in the root directory for more examples.
 
 Here is an example of a GitHub Action configuration that renders a Markdown file to PDF, attaches it to the workflow, and checks it into the repo (if not a pull request):
 
