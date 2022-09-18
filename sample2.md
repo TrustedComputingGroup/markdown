@@ -5,6 +5,7 @@ revision: 3
 date: 8/11/2022
 type: REFERENCE
 status: PUBLISHED
+template: bluetop
 ...
 
 ---
@@ -28,9 +29,9 @@ any information herein. This document is copyrighted by Trusted Computing Group
 follows: You may not copy or reproduce the document or distribute it to others
 without written permission from TCG, except that you may freely do so for the
 purposes of (a) examining or implementing TCG specifications or (b) developing,
-testing, or promoting information technology standards and best practices, so long
-as you distribute the document with these disclaimers, notices, and license terms.
-Contact the Trusted Computing Group at www.trustedcomputinggroup.org for
+testing, or promoting information technology standards and best practices, so
+long as you distribute the document with these disclaimers, notices, and license
+terms. Contact the Trusted Computing Group at www.trustedcomputinggroup.org for
 information on specification licensing through membership agreements. Any marks
 and brands contained herein are the property of their respective owners.
 
@@ -80,7 +81,8 @@ To include an image in the list of figures, use the "#fig" attribute.
 
 To include a Mermaid diagram in the list of figures, use the "caption" option.
 
-See the [mermaid-filter documentation](https://github.com/raghur/mermaid-filter#options)
+See the
+[mermaid-filter documentation](https://github.com/raghur/mermaid-filter#options)
 for a list of all the options.
 
 ```mermaid {caption="Startup sequence"}
@@ -101,6 +103,82 @@ graph TD;
     A-->C;
     B-->D;
     C-->D;
+```
+
+### Gantt chart
+
+No caption for this chart!
+
+```mermaid
+gantt
+dateFormat  YYYY-MM-DD
+title Adding GANTT diagram to mermaid
+excludes weekdays 2014-01-10
+
+section A section
+Completed task            :done,    des1, 2014-01-06,2014-01-08
+Active task               :active,  des2, 2014-01-09, 3d
+Future task               :         des3, after des2, 5d
+Future task2               :         des4, after des3, 5d
+```
+
+### UML
+
+```mermaid
+classDiagram
+Class01 <|-- AveryLongClass : Cool
+Class03 *-- Class04
+Class05 o-- Class06
+Class07 .. Class08
+Class09 --> C2 : Where am i?
+Class09 --* C3
+Class09 --|> Class07
+Class07 : equals()
+Class07 : Object[] elementData
+Class01 : size()
+Class01 : int chimp
+Class01 : int gorilla
+Class08 <--> C2: Cool label
+```
+
+### Git
+
+```mermaid {caption="Git diagram"}
+    gitGraph
+       commit
+       commit
+       branch develop
+       commit
+       commit
+       commit
+       checkout main
+       commit
+       commit
+```
+
+### Entity relationships
+
+No caption for this one, either.
+
+```mermaid
+erDiagram
+    CUSTOMER ||--o{ ORDER : places
+    ORDER ||--|{ LINE-ITEM : contains
+    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
+```
+
+### User journey
+
+```mermaid {Caption="User journey"}
+journey
+    title My working day
+    section Go to work
+      Make tea: 5: Me
+      Go upstairs: 3: Me
+      Do work: 1: Me, Cat
+    section Go home
+      Go downstairs: 5: Me
+      Sit down: 5: Me
 ```
 
 ### Mandatory Algorithms
