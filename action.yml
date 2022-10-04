@@ -51,7 +51,7 @@ runs:
     # While we're doing this, transform the case to all-caps.
     - run: >
         sed -i
-        '/0/,/\\tableofcontents/s/^# \(.*\)/\\addsec\{\U\1\}/g'
+        '0,/\\tableofcontents/s/^# \(.*\)/\\addsec\{\U\1\}/g'
         ${{ inputs.input-md }}
       shell: sh
     # Grab the date from the front matter and generate the full date and year.
