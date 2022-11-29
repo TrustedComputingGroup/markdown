@@ -176,10 +176,20 @@ on:
   workflow_dispatch:
 
 jobs:
+  configure:
+    runs-on: ubuntu-latest
+    outputs:
+      uid_gid: ${{ steps.get-user.outputs.uid_gid }}
+    steps:
+      - id: get-user
+        run: echo "::set-output name=uid_gid::$(id -u):$(id -g)"
+
   render:
     runs-on: ubuntu-latest
+    needs: configure
     container:
       image: ghcr.io/trustedcomputinggroup/pandoc:0.3.0
+      options: --user ${{ needs.configure.outputs.uid_gid }}
     name: Render PDF
     steps:
       - name: Checkout
