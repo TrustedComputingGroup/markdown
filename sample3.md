@@ -186,11 +186,6 @@ This section contains an HTML Table.
 <td>the largest integer not greater than x</td>
 </tr>
 <tr>
-<td>A  $&#92;coloneqq$  B</td>
-<td>assignment of the results of the expression on the right (B) to the
-parameter on the left</td>
-</tr>
-<tr>
 <td>A = B</td>
 <td>equivalence (A is the same as B)</td>
 </tr>
