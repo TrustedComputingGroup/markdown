@@ -65,7 +65,7 @@ runs:
       id: date
     - run: >
         pandoc
-        --pdf-engine=xelatex
+        --pdf-engine=lualatex
         --embed-resources
         --standalone
         --template=eisvogel.latex
@@ -96,7 +96,7 @@ runs:
         MERMAID_FILTER_FORMAT: "pdf"
     - run: >
         pandoc
-        --pdf-engine=xelatex
+        --pdf-engine=lualatex
         --embed-resources
         --standalone
         --template=eisvogel.latex
@@ -128,7 +128,7 @@ runs:
         MERMAID_FILTER_FORMAT: "pdf"
     - run: >
         pandoc
-        --pdf-engine=xelatex
+        --pdf-engine=lualatex
         --embed-resources
         --standalone
         --filter=/resources/filters/info.py
