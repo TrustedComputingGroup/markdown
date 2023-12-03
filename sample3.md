@@ -178,12 +178,17 @@ This section contains an HTML Table.
 </thead>
 <tbody>
 <tr>
-<td>CEIL(x)</td>
+<td>&LeftCeiling;x&RightCeiling;</td>
 <td>the smallest integer not less than x</td>
 </tr>
 <tr>
-<td><strong>FLOOR(</strong>x<strong>)</strong></td>
+<td><strong>&LeftFloor;</strong>x<strong>&RightFloor;</strong></td>
 <td>the largest integer not greater than x</td>
+</tr>
+<tr>
+<td>A &coloneq; B</td>
+<td>assignment of the results of the expression on the right (B) to the
+parameter on the left</td>
 </tr>
 <tr>
 <td>A = B</td>
