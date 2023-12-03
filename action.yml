@@ -58,9 +58,9 @@ runs:
     - run: |
         DATE=$(grep date: ${{ inputs.input-md }} | head -n 1 | cut -d ' ' -f 2)
         YEAR=$(date --date=$DATE +%Y)
-        echo "::set-output name=year::$YEAR"
+        echo "year=$YEAR" >> $GITHUB_STATE
         DATE_ENGLISH=$(date --date=$DATE "+%B %-d, %Y")
-        echo "::set-output name=date-english::$DATE_ENGLISH"
+        echo "date-english=$DATE_ENGLISH" >> $GITHUB_STATE
       shell: bash
       id: date
     - run: >
