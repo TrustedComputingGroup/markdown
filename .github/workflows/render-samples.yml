@@ -34,6 +34,14 @@ jobs:
           output-docx: sample2.docx
           output-tex: sample2.tex
 
+      - name: Run the action on sample3
+        uses: ./
+        with:
+          input-md: sample3.md
+          output-pdf: sample3.pdf
+          output-docx: sample3.docx
+          output-tex: sample3.tex
+
       - name: Upload Artifact
         uses: actions/upload-artifact@master
         with:

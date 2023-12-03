@@ -146,4 +146,19 @@ Table: Fantastic Table
 | ------------ | ------------ | ------------ |
 | AAAAAAAA     | BBBBBBBB     | CCCCCCCC     |
 
+## Temperatures
+
+This section contains a Grid Table.
+
++---------------------+-----------------------+
+| Location            | Temperature 1961-1990 |
+|                     | in degree Celsius     |
+|                     +-------+-------+-------+
+|                     | min   | mean  | max   |
++=====================+=======+=======+=======+
+| Antarctica          | -89.2 | N/A   | 19.8  |
++---------------------+-------+-------+-------+
+| Earth               | -89.2 | 14    | 56.7  |
++---------------------+-------+-------+-------+
+
 # References
