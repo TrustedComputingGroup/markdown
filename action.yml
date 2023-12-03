@@ -70,7 +70,7 @@ runs:
         --template=eisvogel.latex
         --filter=mermaid-filter
         --filter=pandoc-crossref
-		    --lua-filter=parse-html.lua
+        --lua-filter=parse-html.lua
         --resource-path=.:/resources
         --data-dir=/resources
         --top-level-division=section
@@ -100,7 +100,7 @@ runs:
         --template=eisvogel.latex
         --filter=mermaid-filter
         --filter=pandoc-crossref
-		    --lua-filter=parse-html.lua
+        --lua-filter=parse-html.lua
         --resource-path=.:/resources
         --data-dir=/resources
         --top-level-division=section
@@ -131,7 +131,7 @@ runs:
         --filter=/resources/filters/info.py
         --filter=mermaid-filter
         --filter=pandoc-crossref
-		    --lua-filter=parse-html.lua
+        --lua-filter=parse-html.lua
         --resource-path=.:/resources
         --data-dir=/resources
         --from=markdown+implicit_figures+grid_tables+table_captions-citations-markdown_in_html_blocks
