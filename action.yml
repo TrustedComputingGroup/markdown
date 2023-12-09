@@ -65,6 +65,7 @@ runs:
       id: date
     - run: >
         pandoc
+        --trace
         --pdf-engine=lualatex
         --embed-resources
         --standalone
@@ -96,6 +97,7 @@ runs:
         MERMAID_FILTER_FORMAT: "pdf"
     - run: >
         pandoc
+        --trace
         --pdf-engine=lualatex
         --embed-resources
         --standalone
@@ -128,6 +130,7 @@ runs:
         MERMAID_FILTER_FORMAT: "pdf"
     - run: >
         pandoc
+        --trace
         --pdf-engine=lualatex
         --embed-resources
         --standalone
