@@ -87,7 +87,7 @@ runs:
         --metadata=titlepage-rule-height:0
         --metadata=colorlinks:true
         --metadata=contact:admin@trustedcomputinggroup.org
-        --from=markdown+implicit_figures+grid_tables+table_captions-citations-markdown_in_html_blocks
+        --from=markdown+implicit_figures+grid_tables+table_captions-markdown_in_html_blocks
         --to=pdf
         ${{ inputs.input-md }}
         --output=${{ inputs.output-pdf }}
@@ -119,7 +119,7 @@ runs:
         --metadata=titlepage-rule-height:0
         --metadata=colorlinks:true
         --metadata=contact:admin@trustedcomputinggroup.org
-        --from=markdown+implicit_figures+grid_tables+table_captions-citations-markdown_in_html_blocks
+        --from=markdown+implicit_figures+grid_tables+table_captions-markdown_in_html_blocks
         --to=latex
         ${{ inputs.input-md }}
         --output=${{ inputs.output-tex }}
@@ -140,7 +140,7 @@ runs:
         --lua-filter=parse-html.lua
         --resource-path=.:/resources
         --data-dir=/resources
-        --from=markdown+implicit_figures+grid_tables+table_captions-citations-markdown_in_html_blocks
+        --from=markdown+implicit_figures+grid_tables+table_captions-markdown_in_html_blocks
         --reference-doc=/resources/templates/tcg_template.docx
         --to=docx
         ${{ inputs.input-md }}
