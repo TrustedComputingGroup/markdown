@@ -72,7 +72,7 @@ runs:
         --template=eisvogel.latex
         --filter=mermaid-filter
         --filter=pandoc-crossref
-        --lua-filter=tables-rules.lua
+        --lua-filter=table-rules.lua
         --lua-filter=parse-html.lua
         --resource-path=.:/resources
         --data-dir=/resources
@@ -107,7 +107,7 @@ runs:
         --template=eisvogel.latex
         --filter=mermaid-filter
         --filter=pandoc-crossref
-        --lua-filter=tables-rules.lua
+        --lua-filter=table-rules.lua
         --lua-filter=parse-html.lua
         --resource-path=.:/resources
         --data-dir=/resources
