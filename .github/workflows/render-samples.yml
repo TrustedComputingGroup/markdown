@@ -25,6 +25,7 @@ jobs:
           output-pdf: sample1.pdf
           output-docx: sample1.docx
           output-tex: sample1.tex
+          output-html: sample1.html
 
       - name: Run the action on sample2
         uses: ./
@@ -32,15 +33,13 @@ jobs:
           input-md: sample2.md
           output-pdf: sample2.pdf
           output-docx: sample2.docx
-          output-tex: sample2.tex
+          output-html: sample2.html
 
       - name: Run the action on sample3
         uses: ./
         with:
           input-md: sample3.md
           output-pdf: sample3.pdf
-          output-docx: sample3.docx
-          output-tex: sample3.tex
 
       - name: Upload Artifact
         uses: actions/upload-artifact@master
@@ -50,6 +49,7 @@ jobs:
             sample*.docx
             sample*.tex
             sample*.pdf
+            sample*.html
 
       - name: Check in latest render
         uses: stefanzweifel/git-auto-commit-action@v4

@@ -6,7 +6,8 @@ inputs:
     required: true
   output-pdf:
     description: 'The name of the rendered PDF file'
-    required: true
+  output-html:
+    description: 'The name of the rendered HTML file'
   output-docx:
     description: 'The name of the rendered DOCX file'
   output-tex:
@@ -20,31 +21,9 @@ runs:
       shell: sh
     - run: >
         /usr/bin/build.sh
-        --puppeteer
-        --pdf=${{ inputs.output-pdf }}
+        $( [ -n "${{ inputs.output-pdf }}" ] && echo --pdf=${{ inputs.output-pdf }} )
+        $( [ -n "${{ inputs.output-html }}" ] && echo --html=${{ inputs.output-html }} )
+        $( [ -n "${{ inputs.output-docx }}" ] && echo --docx=${{ inputs.output-docx }} )
+        $( [ -n "${{ inputs.output-tex }}" ] && echo --latex=${{ inputs.output-tex }} )
         ${{ inputs.input-md }}
       shell: sh
-      env:
-        MERMAID_FILTER_THEME: "forest"
-        MERMAID_FILTER_FORMAT: "pdf"
-    - run: >
-        /usr/bin/build.sh
-        --puppeteer
-        --latex=${{ inputs.output-tex }}
-        ${{ inputs.input-md }}
-      shell: sh
-      if: ${{ inputs.output-tex }} 
-      env:
-        MERMAID_FILTER_THEME: "forest"
-        MERMAID_FILTER_FORMAT: "pdf"
-    - run: >
-        /usr/bin/build.sh
-        --puppeteer
-        --pdf=${{ inputs.output-pdf }}
-        --docx=${{ inputs.output-docx }}
-        ${{ inputs.input-md }}
-      shell: sh
-      if: ${{ inputs.output-docx }} 
-      env:
-        MERMAID_FILTER_THEME: "forest"
-        MERMAID_FILTER_FORMAT: "pdf"
