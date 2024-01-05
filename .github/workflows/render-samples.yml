@@ -33,7 +33,6 @@ jobs:
           input-md: sample2.md
           output-pdf: sample2.pdf
           output-docx: sample2.docx
-          output-tex: sample2.tex
           output-html: sample2.html
 
       - name: Run the action on sample3
@@ -41,9 +40,6 @@ jobs:
         with:
           input-md: sample3.md
           output-pdf: sample3.pdf
-          output-docx: sample3.docx
-          output-tex: sample3.tex
-          output-html: sample3.html
 
       - name: Upload Artifact
         uses: actions/upload-artifact@master
