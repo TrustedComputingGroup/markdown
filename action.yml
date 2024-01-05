@@ -21,9 +21,9 @@ runs:
       shell: sh
     - run: >
         /usr/bin/build.sh
-        $( [ -n "${{ inputs.output-pdf }}" ] && --pdf=${{ inputs.output-pdf }} )
-        $( [ -n "${{ inputs.output-html }}" ] && --html=${{ inputs.output-html }} )
-        $( [ -n "${{ inputs.output-docx }}" ] && --docx=${{ inputs.output-docx }} )
-        $( [ -n "${{ inputs.output-tex }}" ] && --latex=${{ inputs.output-tex }} )
+        $( [ -n "${{ inputs.output-pdf }}" ] && echo --pdf=${{ inputs.output-pdf }} )
+        $( [ -n "${{ inputs.output-html }}" ] && echo --html=${{ inputs.output-html }} )
+        $( [ -n "${{ inputs.output-docx }}" ] && echo --docx=${{ inputs.output-docx }} )
+        $( [ -n "${{ inputs.output-tex }}" ] && echo --latex=${{ inputs.output-tex }} )
         ${{ inputs.input-md }}
       shell: sh
