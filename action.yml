@@ -12,6 +12,8 @@ inputs:
     description: 'The name of the rendered DOCX file'
   output-tex:
     description: 'The name of the rendered TEX file'
+  extra-build-options:
+    description: 'Additional build options to be passed to build.sh'
 runs:
   using: 'composite'
   steps:
@@ -20,7 +22,7 @@ runs:
     - run: chown -R $(id -u):$(id -g) $PWD
       shell: sh
     - run: >
-        /usr/bin/build.sh
+        /usr/bin/build.sh ${{ inputs.extra-build-options }}
         $( [ -n "${{ inputs.output-pdf }}" ] && echo --pdf=${{ inputs.output-pdf }} )
         $( [ -n "${{ inputs.output-html }}" ] && echo --html=${{ inputs.output-html }} )
         $( [ -n "${{ inputs.output-docx }}" ] && echo --docx=${{ inputs.output-docx }} )
